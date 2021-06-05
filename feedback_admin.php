@@ -6,7 +6,6 @@
 
 <br><br> <a href='profile.php'>Profile</a> <br><br>
 
-
 <?php
 
 session_start();
