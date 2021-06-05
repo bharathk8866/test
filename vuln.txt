@@ -1,0 +1,866 @@
+
+[C:]
+
+[62B86EF7BB87820C3C15B77E45AE3C4B : high : Insecure Randomness : semantic ]
+Jenkins/workspace/FortifyFP/transfer_csrftoekn.php(11) : rand()
+
+[62B86EF7BB87820C3C15B77E45AE3C4A : high : Insecure Randomness : semantic ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer_csrftoekn.php(11) : rand()
+
+[B055006EF7068A667F406B648C12F273 : low : SQL Injection : semantic ]
+Jenkins/workspace/FortifyFP/profile.php(12) : mysqli_query()
+
+[A50F583BDB51A28381F66E62D488BE40 : low : SQL Injection : semantic ]
+Jenkins/workspace/FortifyFP/register.php(14) : mysqli_query()
+
+[4032C2E03BBE434FC633D2D55A4D09B5 : low : SQL Injection : semantic ]
+Jenkins/workspace/FortifyFP/transfer.php(46) : mysqli_query()
+
+[76C2393D148DEDB69934112CB56D8CAE : low : SQL Injection : semantic ]
+Jenkins/workspace/FortifyFP/transfer_csrftoekn.php(47) : mysqli_query()
+
+[B055006EF7068A667F406B648C12F272 : low : SQL Injection : semantic ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/profile.php(12) : mysqli_query()
+
+[A50F583BDB51A28381F66E62D488BE3F : low : SQL Injection : semantic ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/register.php(14) : mysqli_query()
+
+[4032C2E03BBE434FC633D2D55A4D09B4 : low : SQL Injection : semantic ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer.php(46) : mysqli_query()
+
+[76C2393D148DEDB69934112CB56D8CAD : low : SQL Injection : semantic ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer_csrftoekn.php(47) : mysqli_query()
+
+[EC565AC98E17F36EB958C46FDCE51722 : low : Weak Cryptographic Hash : semantic ]
+Jenkins/workspace/FortifyFP/transfer_csrftoekn.php(11) : md5()
+
+[EC565AC98E17F36EB958C46FDCE51721 : low : Weak Cryptographic Hash : semantic ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer_csrftoekn.php(11) : md5()
+
+[40F5846FEC78856B99A1AF74112AFF5E : medium : Often Misused : File Upload : semantic ]
+Jenkins/workspace/FortifyFP/fileupload.php(47) : move_uploaded_file()
+
+[D13027F9BCE81FA379CB4F22F85D6089 : medium : Often Misused : File Upload : semantic ]
+Jenkins/workspace/FortifyFP/fileupload.php(48) : move_uploaded_file()
+
+[40F5846FEC78856B99A1AF74112AFF5D : medium : Often Misused : File Upload : semantic ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/fileupload.php(47) : move_uploaded_file()
+
+[D13027F9BCE81FA379CB4F22F85D6088 : medium : Often Misused : File Upload : semantic ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/fileupload.php(48) : move_uploaded_file()
+
+[37365F8053B72DEC95D5C96B04D87FFF : critical : JSON Injection : dataflow ]
+Jenkins/workspace/FortifyFP/regapi.php(5) :  ->json_decode(0)
+    Jenkins/workspace/FortifyFP/regapi.php(3) : <=> ($json)
+    Jenkins/workspace/FortifyFP/regapi.php(3) : <- file_get_contents(return)
+
+[37365F8053B72DEC95D5C96B04D88000 : critical : JSON Injection : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/regapi.php(5) :  ->json_decode(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/regapi.php(3) : <=> ($json)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/regapi.php(3) : <- file_get_contents(return)
+
+[BAB2B8975D433C07D88124CF5F34870A : critical : XML Injection : dataflow ]
+Jenkins/workspace/FortifyFP/register.php(6) :  ->domdocument.loadxml(0)
+    Jenkins/workspace/FortifyFP/register.php(4) : <=> ($xmlfile)
+    Jenkins/workspace/FortifyFP/register.php(4) : <- file_get_contents(return)
+
+[BAB2B8975D433C07D88124CF5F34870B : critical : XML Injection : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/register.php(6) :  ->domdocument.loadxml(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/register.php(4) : <=> ($xmlfile)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/register.php(4) : <- file_get_contents(return)
+
+[7627918F421ACFBF61D6E57FC535DC2C : critical : Path Manipulation : dataflow ]
+Jenkins/workspace/FortifyFP/kycdownload_ssrf.php(26) :  ->readfile(0)
+    Jenkins/workspace/FortifyFP/kycdownload_ssrf.php(8) :  ->file_download(0)
+    Jenkins/workspace/FortifyFP/kycdownload_ssrf.php(3) : <=> ($file)
+    Jenkins/workspace/FortifyFP/kycdownload_ssrf.php(3) : <->trim(0->return)
+    Jenkins/workspace/FortifyFP/kycdownload_ssrf.php(3) :  ($_GET['file'])
+
+[7627918F421ACFBF61D6E57FC535DC2D : critical : Path Manipulation : dataflow ]
+Jenkins/workspace/FortifyFP/ssrf_download.php(26) :  ->readfile(0)
+    Jenkins/workspace/FortifyFP/kycdownload_ssrf.php(8) :  ->file_download(0)
+    Jenkins/workspace/FortifyFP/kycdownload_ssrf.php(3) : <=> ($file)
+    Jenkins/workspace/FortifyFP/kycdownload_ssrf.php(3) : <->trim(0->return)
+    Jenkins/workspace/FortifyFP/kycdownload_ssrf.php(3) :  ($_GET['file'])
+
+[7627918F421ACFBF61D6E57FC535DC2E : critical : Path Manipulation : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/kycdownload_ssrf.php(26) :  ->readfile(0)
+    Jenkins/workspace/FortifyFP/kycdownload_ssrf.php(8) :  ->file_download(0)
+    Jenkins/workspace/FortifyFP/kycdownload_ssrf.php(3) : <=> ($file)
+    Jenkins/workspace/FortifyFP/kycdownload_ssrf.php(3) : <->trim(0->return)
+    Jenkins/workspace/FortifyFP/kycdownload_ssrf.php(3) :  ($_GET['file'])
+
+[7627918F421ACFBF61D6E57FC535DC2F : critical : Path Manipulation : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/ssrf_download.php(26) :  ->readfile(0)
+    Jenkins/workspace/FortifyFP/kycdownload_ssrf.php(8) :  ->file_download(0)
+    Jenkins/workspace/FortifyFP/kycdownload_ssrf.php(3) : <=> ($file)
+    Jenkins/workspace/FortifyFP/kycdownload_ssrf.php(3) : <->trim(0->return)
+    Jenkins/workspace/FortifyFP/kycdownload_ssrf.php(3) :  ($_GET['file'])
+
+[7F0FCF95A045FEBE1133014AC2FBE7FD : critical : Path Manipulation : dataflow ]
+Jenkins/workspace/FortifyFP/kycdownload_ssrf.php(26) :  ->readfile(0)
+    Jenkins/workspace/FortifyFP/ssrf_download.php(8) :  ->file_download(0)
+    Jenkins/workspace/FortifyFP/ssrf_download.php(3) : <=> ($file)
+    Jenkins/workspace/FortifyFP/ssrf_download.php(3) : <->trim(0->return)
+    Jenkins/workspace/FortifyFP/ssrf_download.php(3) :  ($_GET['file'])
+
+[7F0FCF95A045FEBE1133014AC2FBE7FE : critical : Path Manipulation : dataflow ]
+Jenkins/workspace/FortifyFP/ssrf_download.php(26) :  ->readfile(0)
+    Jenkins/workspace/FortifyFP/ssrf_download.php(8) :  ->file_download(0)
+    Jenkins/workspace/FortifyFP/ssrf_download.php(3) : <=> ($file)
+    Jenkins/workspace/FortifyFP/ssrf_download.php(3) : <->trim(0->return)
+    Jenkins/workspace/FortifyFP/ssrf_download.php(3) :  ($_GET['file'])
+
+[7F0FCF95A045FEBE1133014AC2FBE7FF : critical : Path Manipulation : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/kycdownload_ssrf.php(26) :  ->readfile(0)
+    Jenkins/workspace/FortifyFP/ssrf_download.php(8) :  ->file_download(0)
+    Jenkins/workspace/FortifyFP/ssrf_download.php(3) : <=> ($file)
+    Jenkins/workspace/FortifyFP/ssrf_download.php(3) : <->trim(0->return)
+    Jenkins/workspace/FortifyFP/ssrf_download.php(3) :  ($_GET['file'])
+
+[7F0FCF95A045FEBE1133014AC2FBE800 : critical : Path Manipulation : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/ssrf_download.php(26) :  ->readfile(0)
+    Jenkins/workspace/FortifyFP/ssrf_download.php(8) :  ->file_download(0)
+    Jenkins/workspace/FortifyFP/ssrf_download.php(3) : <=> ($file)
+    Jenkins/workspace/FortifyFP/ssrf_download.php(3) : <->trim(0->return)
+    Jenkins/workspace/FortifyFP/ssrf_download.php(3) :  ($_GET['file'])
+
+[230F098346AB5BB487495558130CE9A6 : critical : Path Manipulation : dataflow ]
+Jenkins/workspace/FortifyFP/ssrf_getcontents.php(12) :  ->file_get_contents(0)
+    Jenkins/workspace/FortifyFP/ssrf_getcontents.php(3) : <=> ($file)
+    Jenkins/workspace/FortifyFP/ssrf_getcontents.php(3) : <->trim(0->return)
+    Jenkins/workspace/FortifyFP/ssrf_getcontents.php(3) :  ($_GET['file'])
+
+[7627918F421ACFBF61D6E57FC535DC30 : critical : Path Manipulation : dataflow ]
+Jenkins/workspace/FortifyFP/kycdownload_ssrf.php(26) :  ->readfile(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/kycdownload_ssrf.php(8) :  ->file_download(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/kycdownload_ssrf.php(3) : <=> ($file)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/kycdownload_ssrf.php(3) : <->trim(0->return)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/kycdownload_ssrf.php(3) :  ($_GET['file'])
+
+[7627918F421ACFBF61D6E57FC535DC31 : critical : Path Manipulation : dataflow ]
+Jenkins/workspace/FortifyFP/ssrf_download.php(26) :  ->readfile(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/kycdownload_ssrf.php(8) :  ->file_download(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/kycdownload_ssrf.php(3) : <=> ($file)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/kycdownload_ssrf.php(3) : <->trim(0->return)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/kycdownload_ssrf.php(3) :  ($_GET['file'])
+
+[7627918F421ACFBF61D6E57FC535DC32 : critical : Path Manipulation : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/kycdownload_ssrf.php(26) :  ->readfile(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/kycdownload_ssrf.php(8) :  ->file_download(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/kycdownload_ssrf.php(3) : <=> ($file)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/kycdownload_ssrf.php(3) : <->trim(0->return)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/kycdownload_ssrf.php(3) :  ($_GET['file'])
+
+[7627918F421ACFBF61D6E57FC535DC33 : critical : Path Manipulation : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/ssrf_download.php(26) :  ->readfile(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/kycdownload_ssrf.php(8) :  ->file_download(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/kycdownload_ssrf.php(3) : <=> ($file)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/kycdownload_ssrf.php(3) : <->trim(0->return)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/kycdownload_ssrf.php(3) :  ($_GET['file'])
+
+[7F0FCF95A045FEBE1133014AC2FBE801 : critical : Path Manipulation : dataflow ]
+Jenkins/workspace/FortifyFP/kycdownload_ssrf.php(26) :  ->readfile(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/ssrf_download.php(8) :  ->file_download(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/ssrf_download.php(3) : <=> ($file)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/ssrf_download.php(3) : <->trim(0->return)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/ssrf_download.php(3) :  ($_GET['file'])
+
+[7F0FCF95A045FEBE1133014AC2FBE802 : critical : Path Manipulation : dataflow ]
+Jenkins/workspace/FortifyFP/ssrf_download.php(26) :  ->readfile(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/ssrf_download.php(8) :  ->file_download(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/ssrf_download.php(3) : <=> ($file)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/ssrf_download.php(3) : <->trim(0->return)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/ssrf_download.php(3) :  ($_GET['file'])
+
+[7F0FCF95A045FEBE1133014AC2FBE803 : critical : Path Manipulation : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/kycdownload_ssrf.php(26) :  ->readfile(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/ssrf_download.php(8) :  ->file_download(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/ssrf_download.php(3) : <=> ($file)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/ssrf_download.php(3) : <->trim(0->return)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/ssrf_download.php(3) :  ($_GET['file'])
+
+[7F0FCF95A045FEBE1133014AC2FBE804 : critical : Path Manipulation : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/ssrf_download.php(26) :  ->readfile(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/ssrf_download.php(8) :  ->file_download(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/ssrf_download.php(3) : <=> ($file)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/ssrf_download.php(3) : <->trim(0->return)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/ssrf_download.php(3) :  ($_GET['file'])
+
+[230F098346AB5BB487495558130CE9A7 : critical : Path Manipulation : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/ssrf_getcontents.php(12) :  ->file_get_contents(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/ssrf_getcontents.php(3) : <=> ($file)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/ssrf_getcontents.php(3) : <->trim(0->return)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/ssrf_getcontents.php(3) :  ($_GET['file'])
+
+[D695129342C9F319942EAA2B679C90B8 : high : Access Control : Database : dataflow ]
+Jenkins/workspace/FortifyFP/transfer.php(55) :  ->mysqli_query(1)
+    Jenkins/workspace/FortifyFP/transfer.php(50) : <=> ($fbalance)
+    Jenkins/workspace/FortifyFP/transfer.php(50) : <->__fortify_casttoint(0->return)
+    Jenkins/workspace/FortifyFP/transfer.php(38) : <=> ($tamount)
+    Jenkins/workspace/FortifyFP/transfer.php(38) :  ($_POST['tamount'])
+
+[63B7E742E4F5A75D0EF8DD9D83ACE6D1 : high : Access Control : Database : dataflow ]
+Jenkins/workspace/FortifyFP/transfer.php(67) :  ->mysqli_query(1)
+    Jenkins/workspace/FortifyFP/transfer.php(62) : <=> ($tbalance)
+    Jenkins/workspace/FortifyFP/transfer.php(62) : <->__fortify_casttoint(0->return)
+    Jenkins/workspace/FortifyFP/transfer.php(38) : <=> ($tamount)
+    Jenkins/workspace/FortifyFP/transfer.php(38) :  ($_POST['tamount'])
+
+[0836CB22E9A889DAC3E0728572BAFA86 : high : Access Control : Database : dataflow ]
+Jenkins/workspace/FortifyFP/transfer.php(55) :  ->mysqli_query(1)
+    Jenkins/workspace/FortifyFP/transfer.php(50) : <=> ($fbalance)
+    Jenkins/workspace/FortifyFP/transfer.php(50) : <->__fortify_casttoint(0->return)
+    Jenkins/workspace/FortifyFP/transfer.php(48) : <=> ($frow)
+    Jenkins/workspace/FortifyFP/transfer.php(48) : <->mysqli_fetch_row(0->return)
+    Jenkins/workspace/FortifyFP/transfer.php(46) : <=> ($fresult)
+    Jenkins/workspace/FortifyFP/transfer.php(46) : <- mysqli_query(return)
+
+[20B198874255A2EA1528A5175E31C03C : high : Access Control : Database : dataflow ]
+Jenkins/workspace/FortifyFP/transfer.php(67) :  ->mysqli_query(1)
+    Jenkins/workspace/FortifyFP/transfer.php(62) : <=> ($tbalance)
+    Jenkins/workspace/FortifyFP/transfer.php(62) : <->__fortify_casttoint(0->return)
+    Jenkins/workspace/FortifyFP/transfer.php(60) : <=> ($trow)
+    Jenkins/workspace/FortifyFP/transfer.php(60) : <->mysqli_fetch_row(0->return)
+    Jenkins/workspace/FortifyFP/transfer.php(58) : <=> ($tresult)
+    Jenkins/workspace/FortifyFP/transfer.php(58) : <- mysqli_query(return)
+
+[05F0BFB60CFF40CC96E09E68020716AF : high : Access Control : Database : dataflow ]
+Jenkins/workspace/FortifyFP/transfer_csrftoekn.php(56) :  ->mysqli_query(1)
+    Jenkins/workspace/FortifyFP/transfer_csrftoekn.php(51) : <=> ($fbalance)
+    Jenkins/workspace/FortifyFP/transfer_csrftoekn.php(51) : <->__fortify_casttoint(0->return)
+    Jenkins/workspace/FortifyFP/transfer_csrftoekn.php(39) : <=> ($tamount)
+    Jenkins/workspace/FortifyFP/transfer_csrftoekn.php(39) :  ($_POST['tamount'])
+
+[FE78C2E132B51F5F3D26FBBE707C5491 : high : Access Control : Database : dataflow ]
+Jenkins/workspace/FortifyFP/transfer_csrftoekn.php(68) :  ->mysqli_query(1)
+    Jenkins/workspace/FortifyFP/transfer_csrftoekn.php(63) : <=> ($tbalance)
+    Jenkins/workspace/FortifyFP/transfer_csrftoekn.php(63) : <->__fortify_casttoint(0->return)
+    Jenkins/workspace/FortifyFP/transfer_csrftoekn.php(39) : <=> ($tamount)
+    Jenkins/workspace/FortifyFP/transfer_csrftoekn.php(39) :  ($_POST['tamount'])
+
+[2EED89F1A10E067B844A4B1F32F85241 : high : Access Control : Database : dataflow ]
+Jenkins/workspace/FortifyFP/transfer_csrftoekn.php(56) :  ->mysqli_query(1)
+    Jenkins/workspace/FortifyFP/transfer_csrftoekn.php(51) : <=> ($fbalance)
+    Jenkins/workspace/FortifyFP/transfer_csrftoekn.php(51) : <->__fortify_casttoint(0->return)
+    Jenkins/workspace/FortifyFP/transfer_csrftoekn.php(49) : <=> ($frow)
+    Jenkins/workspace/FortifyFP/transfer_csrftoekn.php(49) : <->mysqli_fetch_row(0->return)
+    Jenkins/workspace/FortifyFP/transfer_csrftoekn.php(47) : <=> ($fresult)
+    Jenkins/workspace/FortifyFP/transfer_csrftoekn.php(47) : <- mysqli_query(return)
+
+[AABBD92822A8B2A33CAE6946D09A4623 : high : Access Control : Database : dataflow ]
+Jenkins/workspace/FortifyFP/transfer_csrftoekn.php(68) :  ->mysqli_query(1)
+    Jenkins/workspace/FortifyFP/transfer_csrftoekn.php(63) : <=> ($tbalance)
+    Jenkins/workspace/FortifyFP/transfer_csrftoekn.php(63) : <->__fortify_casttoint(0->return)
+    Jenkins/workspace/FortifyFP/transfer_csrftoekn.php(61) : <=> ($trow)
+    Jenkins/workspace/FortifyFP/transfer_csrftoekn.php(61) : <->mysqli_fetch_row(0->return)
+    Jenkins/workspace/FortifyFP/transfer_csrftoekn.php(59) : <=> ($tresult)
+    Jenkins/workspace/FortifyFP/transfer_csrftoekn.php(59) : <- mysqli_query(return)
+
+[D695129342C9F319942EAA2B679C90B9 : high : Access Control : Database : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer.php(55) :  ->mysqli_query(1)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer.php(50) : <=> ($fbalance)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer.php(50) : <->__fortify_casttoint(0->return)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer.php(38) : <=> ($tamount)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer.php(38) :  ($_POST['tamount'])
+
+[63B7E742E4F5A75D0EF8DD9D83ACE6D2 : high : Access Control : Database : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer.php(67) :  ->mysqli_query(1)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer.php(62) : <=> ($tbalance)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer.php(62) : <->__fortify_casttoint(0->return)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer.php(38) : <=> ($tamount)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer.php(38) :  ($_POST['tamount'])
+
+[0836CB22E9A889DAC3E0728572BAFA87 : high : Access Control : Database : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer.php(55) :  ->mysqli_query(1)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer.php(50) : <=> ($fbalance)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer.php(50) : <->__fortify_casttoint(0->return)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer.php(48) : <=> ($frow)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer.php(48) : <->mysqli_fetch_row(0->return)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer.php(46) : <=> ($fresult)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer.php(46) : <- mysqli_query(return)
+
+[20B198874255A2EA1528A5175E31C03D : high : Access Control : Database : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer.php(67) :  ->mysqli_query(1)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer.php(62) : <=> ($tbalance)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer.php(62) : <->__fortify_casttoint(0->return)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer.php(60) : <=> ($trow)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer.php(60) : <->mysqli_fetch_row(0->return)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer.php(58) : <=> ($tresult)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer.php(58) : <- mysqli_query(return)
+
+[05F0BFB60CFF40CC96E09E68020716B0 : high : Access Control : Database : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer_csrftoekn.php(56) :  ->mysqli_query(1)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer_csrftoekn.php(51) : <=> ($fbalance)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer_csrftoekn.php(51) : <->__fortify_casttoint(0->return)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer_csrftoekn.php(39) : <=> ($tamount)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer_csrftoekn.php(39) :  ($_POST['tamount'])
+
+[FE78C2E132B51F5F3D26FBBE707C5492 : high : Access Control : Database : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer_csrftoekn.php(68) :  ->mysqli_query(1)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer_csrftoekn.php(63) : <=> ($tbalance)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer_csrftoekn.php(63) : <->__fortify_casttoint(0->return)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer_csrftoekn.php(39) : <=> ($tamount)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer_csrftoekn.php(39) :  ($_POST['tamount'])
+
+[2EED89F1A10E067B844A4B1F32F85242 : high : Access Control : Database : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer_csrftoekn.php(56) :  ->mysqli_query(1)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer_csrftoekn.php(51) : <=> ($fbalance)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer_csrftoekn.php(51) : <->__fortify_casttoint(0->return)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer_csrftoekn.php(49) : <=> ($frow)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer_csrftoekn.php(49) : <->mysqli_fetch_row(0->return)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer_csrftoekn.php(47) : <=> ($fresult)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer_csrftoekn.php(47) : <- mysqli_query(return)
+
+[AABBD92822A8B2A33CAE6946D09A4624 : high : Access Control : Database : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer_csrftoekn.php(68) :  ->mysqli_query(1)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer_csrftoekn.php(63) : <=> ($tbalance)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer_csrftoekn.php(63) : <->__fortify_casttoint(0->return)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer_csrftoekn.php(61) : <=> ($trow)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer_csrftoekn.php(61) : <->mysqli_fetch_row(0->return)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer_csrftoekn.php(59) : <=> ($tresult)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer_csrftoekn.php(59) : <- mysqli_query(return)
+
+[94055AEE8AB81CC4EA5C4F791EB2587E : critical : Privacy Violation : dataflow ]
+Jenkins/workspace/FortifyFP/displaydata_safe.php(29) :  ->builtin_echo(0)
+    Jenkins/workspace/FortifyFP/displaydata_safe.php(29) :  ($dbpassword)
+
+[94055AEE8AB81CC4EA5C4F791EB2587F : critical : Privacy Violation : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/displaydata_safe.php(29) :  ->builtin_echo(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/displaydata_safe.php(29) :  ($dbpassword)
+
+[44BDFD48EE33E2ECBEA644FBFFEEA03C : critical : Command Injection : dataflow ]
+Jenkins/workspace/FortifyFP/images/shell.php(14) :  ->shell_exec(0)
+    Jenkins/workspace/FortifyFP/images/shell.php(13) : <=> ($c)
+    Jenkins/workspace/FortifyFP/images/shell.php(13) :  ($_REQUEST['c'])
+
+[7B516753C979FFA15B5260E4469136A9 : critical : Command Injection : dataflow ]
+Jenkins/workspace/FortifyFP/odysseus.php(4) :  ->shell_exec(0)
+    Jenkins/workspace/FortifyFP/odysseus.php(2) : <=> ($cmd)
+    Jenkins/workspace/FortifyFP/odysseus.php(2) :  ($_GET['cmd'])
+
+[44BDFD48EE33E2ECBEA644FBFFEEA03D : critical : Command Injection : dataflow ]
+Jenkins/workspace/FortifyFP/shell.php(14) :  ->shell_exec(0)
+    Jenkins/workspace/FortifyFP/shell.php(13) : <=> ($c)
+    Jenkins/workspace/FortifyFP/shell.php(13) :  ($_REQUEST['c'])
+
+[44BDFD48EE33E2ECBEA644FBFFEEA03E : critical : Command Injection : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/images/shell.php(14) :  ->shell_exec(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/images/shell.php(13) : <=> ($c)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/images/shell.php(13) :  ($_REQUEST['c'])
+
+[7B516753C979FFA15B5260E4469136AA : critical : Command Injection : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/odysseus.php(4) :  ->shell_exec(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/odysseus.php(2) : <=> ($cmd)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/odysseus.php(2) :  ($_GET['cmd'])
+
+[44BDFD48EE33E2ECBEA644FBFFEEA03F : critical : Command Injection : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/shell.php(14) :  ->shell_exec(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/shell.php(13) : <=> ($c)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/shell.php(13) :  ($_REQUEST['c'])
+
+[76A019B723D691C206B73FAE5358B26B : critical : Path Manipulation : dataflow ]
+Jenkins/workspace/FortifyFP/fileupload.php(47) :  ->move_uploaded_file(1)
+    Jenkins/workspace/FortifyFP/fileupload.php(27) : <=> ($file_name)
+    Jenkins/workspace/FortifyFP/fileupload.php(27) :  ($_FILES['image']['name'])
+
+[A713BA78C4F66A269831D99CCEE1BAF4 : critical : Path Manipulation : dataflow ]
+Jenkins/workspace/FortifyFP/fileupload.php(48) :  ->move_uploaded_file(1)
+    Jenkins/workspace/FortifyFP/fileupload.php(27) : <=> ($file_name)
+    Jenkins/workspace/FortifyFP/fileupload.php(27) :  ($_FILES['image']['name'])
+
+[76A019B723D691C206B73FAE5358B26C : critical : Path Manipulation : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/fileupload.php(47) :  ->move_uploaded_file(1)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/fileupload.php(27) : <=> ($file_name)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/fileupload.php(27) :  ($_FILES['image']['name'])
+
+[A713BA78C4F66A269831D99CCEE1BAF5 : critical : Path Manipulation : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/fileupload.php(48) :  ->move_uploaded_file(1)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/fileupload.php(27) : <=> ($file_name)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/fileupload.php(27) :  ($_FILES['image']['name'])
+
+[531C2B75DB4375E8F91D829469B60EBA : critical : Cross-Site Scripting : Persistent : dataflow ]
+Jenkins/workspace/FortifyFP/displaydata.php(28) :  ->builtin_echo(0)
+    Jenkins/workspace/FortifyFP/displaydata.php(25) : <=> ($row)
+    Jenkins/workspace/FortifyFP/displaydata.php(25) : <->mysqli_fetch_row(0->return)
+    Jenkins/workspace/FortifyFP/displaydata.php(23) : <=> ($result)
+    Jenkins/workspace/FortifyFP/displaydata.php(23) : <- mysqli_query(return)
+
+[39322D4460D406227C17C2A33181CB74 : critical : Cross-Site Scripting : Persistent : dataflow ]
+Jenkins/workspace/FortifyFP/displaydata.php(28) :  ->builtin_echo(0)
+    Jenkins/workspace/FortifyFP/displaydata.php(25) : <=> ($row)
+    Jenkins/workspace/FortifyFP/displaydata.php(25) : <->mysqli_fetch_row(0->return)
+    Jenkins/workspace/FortifyFP/displaydata.php(23) : <=> ($result)
+    Jenkins/workspace/FortifyFP/displaydata.php(23) : <- mysqli_query(return)
+
+[5DD756AE1DCA52C1EECD9C7E81B000EB : critical : Cross-Site Scripting : Persistent : dataflow ]
+Jenkins/workspace/FortifyFP/displaydata.php(28) :  ->builtin_echo(0)
+    Jenkins/workspace/FortifyFP/displaydata.php(25) : <=> ($row)
+    Jenkins/workspace/FortifyFP/displaydata.php(25) : <->mysqli_fetch_row(0->return)
+    Jenkins/workspace/FortifyFP/displaydata.php(23) : <=> ($result)
+    Jenkins/workspace/FortifyFP/displaydata.php(23) : <- mysqli_query(return)
+
+[CCC7C927983F0395AD5092873E5195D4 : critical : Cross-Site Scripting : Persistent : dataflow ]
+Jenkins/workspace/FortifyFP/displaydata_safe.php(29) :  ->builtin_echo(0)
+    Jenkins/workspace/FortifyFP/displaydata_safe.php(26) : <- mysqli_stmt_bind_result(1)
+
+[ED669763FB5E6060863C9D9CFFAA0374 : critical : Cross-Site Scripting : Persistent : dataflow ]
+Jenkins/workspace/FortifyFP/displaydata_safe.php(29) :  ->builtin_echo(0)
+    Jenkins/workspace/FortifyFP/displaydata_safe.php(26) : <- mysqli_stmt_bind_result(2)
+
+[29BEEF3D215EA4F8FF40FD99EB94262D : critical : Cross-Site Scripting : Persistent : dataflow ]
+Jenkins/workspace/FortifyFP/feedback_admin.php(29) :  ->builtin_echo(0)
+    Jenkins/workspace/FortifyFP/feedback_admin.php(26) : <=> ($user)
+    Jenkins/workspace/FortifyFP/feedback_admin.php(25) : <=> ($row)
+    Jenkins/workspace/FortifyFP/feedback_admin.php(25) : <->mysqli_fetch_row(0->return)
+    Jenkins/workspace/FortifyFP/feedback_admin.php(22) : <=> ($result)
+    Jenkins/workspace/FortifyFP/feedback_admin.php(22) : <- mysqli_query(return)
+
+[6DFDE5ACE4E02E4473F7B4EE787942F8 : critical : Cross-Site Scripting : Persistent : dataflow ]
+Jenkins/workspace/FortifyFP/feedback_admin.php(29) :  ->builtin_echo(0)
+    Jenkins/workspace/FortifyFP/feedback_admin.php(28) : <=> ($fback)
+    Jenkins/workspace/FortifyFP/feedback_admin.php(27) : <=> ($row[6])
+    Jenkins/workspace/FortifyFP/feedback_admin.php(25) : <=> ($row)
+    Jenkins/workspace/FortifyFP/feedback_admin.php(25) : <->mysqli_fetch_row(0->return)
+    Jenkins/workspace/FortifyFP/feedback_admin.php(22) : <=> ($result)
+    Jenkins/workspace/FortifyFP/feedback_admin.php(22) : <- mysqli_query(return)
+
+[966FD42FEC0696CF1D3A71B7E41B2E9F : critical : Cross-Site Scripting : Persistent : dataflow ]
+Jenkins/workspace/FortifyFP/profile.php(24) :  ->builtin_echo(0)
+    Jenkins/workspace/FortifyFP/profile.php(17) : <=> ($row)
+    Jenkins/workspace/FortifyFP/profile.php(17) : <->mysqli_fetch_row(0->return)
+    Jenkins/workspace/FortifyFP/profile.php(12) : <=> ($result)
+    Jenkins/workspace/FortifyFP/profile.php(12) : <- mysqli_query(return)
+
+[8DAD838E7CACAB3B144EE909F71B660A : critical : Cross-Site Scripting : Persistent : dataflow ]
+Jenkins/workspace/FortifyFP/profile.php(25) :  ->builtin_echo(0)
+    Jenkins/workspace/FortifyFP/profile.php(17) : <=> ($row)
+    Jenkins/workspace/FortifyFP/profile.php(17) : <->mysqli_fetch_row(0->return)
+    Jenkins/workspace/FortifyFP/profile.php(12) : <=> ($result)
+    Jenkins/workspace/FortifyFP/profile.php(12) : <- mysqli_query(return)
+
+[63838A6094F599616B085E8382438DA8 : critical : Cross-Site Scripting : Persistent : dataflow ]
+Jenkins/workspace/FortifyFP/profile.php(26) :  ->builtin_echo(0)
+    Jenkins/workspace/FortifyFP/profile.php(17) : <=> ($row)
+    Jenkins/workspace/FortifyFP/profile.php(17) : <->mysqli_fetch_row(0->return)
+    Jenkins/workspace/FortifyFP/profile.php(12) : <=> ($result)
+    Jenkins/workspace/FortifyFP/profile.php(12) : <- mysqli_query(return)
+
+[DC7207B18A51EB4BF0C93F04789308B0 : critical : Cross-Site Scripting : Persistent : dataflow ]
+Jenkins/workspace/FortifyFP/profile.php(27) :  ->builtin_echo(0)
+    Jenkins/workspace/FortifyFP/profile.php(17) : <=> ($row)
+    Jenkins/workspace/FortifyFP/profile.php(17) : <->mysqli_fetch_row(0->return)
+    Jenkins/workspace/FortifyFP/profile.php(12) : <=> ($result)
+    Jenkins/workspace/FortifyFP/profile.php(12) : <- mysqli_query(return)
+
+[92621DAEFA747F971583A85C1D32EBE7 : critical : Cross-Site Scripting : Persistent : dataflow ]
+Jenkins/workspace/FortifyFP/profile.php(28) :  ->builtin_echo(0)
+    Jenkins/workspace/FortifyFP/profile.php(17) : <=> ($row)
+    Jenkins/workspace/FortifyFP/profile.php(17) : <->mysqli_fetch_row(0->return)
+    Jenkins/workspace/FortifyFP/profile.php(12) : <=> ($result)
+    Jenkins/workspace/FortifyFP/profile.php(12) : <- mysqli_query(return)
+
+[531C2B75DB4375E8F91D829469B60EBB : critical : Cross-Site Scripting : Persistent : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/displaydata.php(28) :  ->builtin_echo(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/displaydata.php(25) : <=> ($row)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/displaydata.php(25) : <->mysqli_fetch_row(0->return)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/displaydata.php(23) : <=> ($result)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/displaydata.php(23) : <- mysqli_query(return)
+
+[39322D4460D406227C17C2A33181CB75 : critical : Cross-Site Scripting : Persistent : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/displaydata.php(28) :  ->builtin_echo(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/displaydata.php(25) : <=> ($row)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/displaydata.php(25) : <->mysqli_fetch_row(0->return)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/displaydata.php(23) : <=> ($result)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/displaydata.php(23) : <- mysqli_query(return)
+
+[5DD756AE1DCA52C1EECD9C7E81B000EC : critical : Cross-Site Scripting : Persistent : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/displaydata.php(28) :  ->builtin_echo(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/displaydata.php(25) : <=> ($row)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/displaydata.php(25) : <->mysqli_fetch_row(0->return)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/displaydata.php(23) : <=> ($result)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/displaydata.php(23) : <- mysqli_query(return)
+
+[CCC7C927983F0395AD5092873E5195D5 : critical : Cross-Site Scripting : Persistent : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/displaydata_safe.php(29) :  ->builtin_echo(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/displaydata_safe.php(26) : <- mysqli_stmt_bind_result(1)
+
+[ED669763FB5E6060863C9D9CFFAA0375 : critical : Cross-Site Scripting : Persistent : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/displaydata_safe.php(29) :  ->builtin_echo(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/displaydata_safe.php(26) : <- mysqli_stmt_bind_result(2)
+
+[29BEEF3D215EA4F8FF40FD99EB94262E : critical : Cross-Site Scripting : Persistent : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/feedback_admin.php(29) :  ->builtin_echo(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/feedback_admin.php(26) : <=> ($user)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/feedback_admin.php(25) : <=> ($row)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/feedback_admin.php(25) : <->mysqli_fetch_row(0->return)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/feedback_admin.php(22) : <=> ($result)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/feedback_admin.php(22) : <- mysqli_query(return)
+
+[6DFDE5ACE4E02E4473F7B4EE787942F9 : critical : Cross-Site Scripting : Persistent : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/feedback_admin.php(29) :  ->builtin_echo(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/feedback_admin.php(28) : <=> ($fback)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/feedback_admin.php(27) : <=> ($row[6])
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/feedback_admin.php(25) : <=> ($row)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/feedback_admin.php(25) : <->mysqli_fetch_row(0->return)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/feedback_admin.php(22) : <=> ($result)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/feedback_admin.php(22) : <- mysqli_query(return)
+
+[966FD42FEC0696CF1D3A71B7E41B2EA0 : critical : Cross-Site Scripting : Persistent : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/profile.php(24) :  ->builtin_echo(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/profile.php(17) : <=> ($row)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/profile.php(17) : <->mysqli_fetch_row(0->return)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/profile.php(12) : <=> ($result)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/profile.php(12) : <- mysqli_query(return)
+
+[8DAD838E7CACAB3B144EE909F71B660B : critical : Cross-Site Scripting : Persistent : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/profile.php(25) :  ->builtin_echo(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/profile.php(17) : <=> ($row)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/profile.php(17) : <->mysqli_fetch_row(0->return)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/profile.php(12) : <=> ($result)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/profile.php(12) : <- mysqli_query(return)
+
+[63838A6094F599616B085E8382438DA9 : critical : Cross-Site Scripting : Persistent : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/profile.php(26) :  ->builtin_echo(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/profile.php(17) : <=> ($row)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/profile.php(17) : <->mysqli_fetch_row(0->return)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/profile.php(12) : <=> ($result)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/profile.php(12) : <- mysqli_query(return)
+
+[DC7207B18A51EB4BF0C93F04789308B1 : critical : Cross-Site Scripting : Persistent : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/profile.php(27) :  ->builtin_echo(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/profile.php(17) : <=> ($row)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/profile.php(17) : <->mysqli_fetch_row(0->return)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/profile.php(12) : <=> ($result)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/profile.php(12) : <- mysqli_query(return)
+
+[92621DAEFA747F971583A85C1D32EBE8 : critical : Cross-Site Scripting : Persistent : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/profile.php(28) :  ->builtin_echo(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/profile.php(17) : <=> ($row)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/profile.php(17) : <->mysqli_fetch_row(0->return)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/profile.php(12) : <=> ($result)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/profile.php(12) : <- mysqli_query(return)
+
+[5FA84E3DDE17F09546E55BF58FA22813 : critical : Cross-Site Scripting : Reflected : dataflow ]
+Jenkins/workspace/FortifyFP/images/shell.php(15) :  ->builtin_echo(0)
+    Jenkins/workspace/FortifyFP/images/shell.php(14) : <=> ($output)
+    Jenkins/workspace/FortifyFP/images/shell.php(14) : <->shell_exec(0->return)
+    Jenkins/workspace/FortifyFP/images/shell.php(13) : <=> ($c)
+    Jenkins/workspace/FortifyFP/images/shell.php(13) :  ($_REQUEST['c'])
+
+[4BA07447C34B914FA7EE11140E49E44B : critical : Cross-Site Scripting : Reflected : dataflow ]
+Jenkins/workspace/FortifyFP/kycdownload_ssrf.php(5) :  ->builtin_echo(0)
+    Jenkins/workspace/FortifyFP/kycdownload_ssrf.php(3) : <=> ($file)
+    Jenkins/workspace/FortifyFP/kycdownload_ssrf.php(3) : <->trim(0->return)
+    Jenkins/workspace/FortifyFP/kycdownload_ssrf.php(3) :  ($_GET['file'])
+
+[CB645D93078ACA18637C4A1E3DF77A0C : critical : Cross-Site Scripting : Reflected : dataflow ]
+Jenkins/workspace/FortifyFP/login.php(6) :  ->builtin_echo(0)
+    Jenkins/workspace/FortifyFP/login.php(6) :  ($_POST['uname'])
+
+[D8DBBA80EB2110002F677B84606646DA : critical : Cross-Site Scripting : Reflected : dataflow ]
+Jenkins/workspace/FortifyFP/login.php(67) :  ->builtin_echo(0)
+    Jenkins/workspace/FortifyFP/login.php(27) : <=> ($username)
+    Jenkins/workspace/FortifyFP/login.php(27) :  ($_POST['uname'])
+
+[6BBC6EEAD080EB697F84B94C24E5759B : critical : Cross-Site Scripting : Reflected : dataflow ]
+Jenkins/workspace/FortifyFP/odysseus.php(5) :  ->builtin_echo(0)
+    Jenkins/workspace/FortifyFP/odysseus.php(4) : <=> ($output)
+    Jenkins/workspace/FortifyFP/odysseus.php(4) : <->shell_exec(0->return)
+    Jenkins/workspace/FortifyFP/odysseus.php(2) : <=> ($cmd)
+    Jenkins/workspace/FortifyFP/odysseus.php(2) :  ($_GET['cmd'])
+
+[EE29BC0F26AFDFB6688C50CF052F709E : critical : Cross-Site Scripting : Reflected : dataflow ]
+Jenkins/workspace/FortifyFP/regapi.php(25) :  ->builtin_echo(0)
+    Jenkins/workspace/FortifyFP/regapi.php(7) : <=> ($name)
+    Jenkins/workspace/FortifyFP/regapi.php(5) : <=> ($info)
+    Jenkins/workspace/FortifyFP/regapi.php(5) : <->json_decode(0->return)
+    Jenkins/workspace/FortifyFP/regapi.php(3) : <=> ($json)
+    Jenkins/workspace/FortifyFP/regapi.php(3) : <- file_get_contents(return)
+
+[6BDCD91B420F8D216E89F2A33FEEF3C4 : critical : Cross-Site Scripting : Reflected : dataflow ]
+Jenkins/workspace/FortifyFP/regapi.php(25) :  ->builtin_echo(0)
+    Jenkins/workspace/FortifyFP/regapi.php(9) : <=> ($email)
+    Jenkins/workspace/FortifyFP/regapi.php(5) : <=> ($info)
+    Jenkins/workspace/FortifyFP/regapi.php(5) : <->json_decode(0->return)
+    Jenkins/workspace/FortifyFP/regapi.php(3) : <=> ($json)
+    Jenkins/workspace/FortifyFP/regapi.php(3) : <- file_get_contents(return)
+
+[5FA84E3DDE17F09546E55BF58FA22814 : critical : Cross-Site Scripting : Reflected : dataflow ]
+Jenkins/workspace/FortifyFP/shell.php(15) :  ->builtin_echo(0)
+    Jenkins/workspace/FortifyFP/shell.php(14) : <=> ($output)
+    Jenkins/workspace/FortifyFP/shell.php(14) : <->shell_exec(0->return)
+    Jenkins/workspace/FortifyFP/shell.php(13) : <=> ($c)
+    Jenkins/workspace/FortifyFP/shell.php(13) :  ($_REQUEST['c'])
+
+[46B16D5B8B4D49C1BAC64C418AEE6544 : critical : Cross-Site Scripting : Reflected : dataflow ]
+Jenkins/workspace/FortifyFP/ssrf_download.php(5) :  ->builtin_echo(0)
+    Jenkins/workspace/FortifyFP/ssrf_download.php(3) : <=> ($file)
+    Jenkins/workspace/FortifyFP/ssrf_download.php(3) : <->trim(0->return)
+    Jenkins/workspace/FortifyFP/ssrf_download.php(3) :  ($_GET['file'])
+
+[5FA84E3DDE17F09546E55BF58FA22815 : critical : Cross-Site Scripting : Reflected : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/images/shell.php(15) :  ->builtin_echo(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/images/shell.php(14) : <=> ($output)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/images/shell.php(14) : <->shell_exec(0->return)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/images/shell.php(13) : <=> ($c)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/images/shell.php(13) :  ($_REQUEST['c'])
+
+[4BA07447C34B914FA7EE11140E49E44C : critical : Cross-Site Scripting : Reflected : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/kycdownload_ssrf.php(5) :  ->builtin_echo(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/kycdownload_ssrf.php(3) : <=> ($file)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/kycdownload_ssrf.php(3) : <->trim(0->return)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/kycdownload_ssrf.php(3) :  ($_GET['file'])
+
+[CB645D93078ACA18637C4A1E3DF77A0D : critical : Cross-Site Scripting : Reflected : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/login.php(5) :  ->builtin_echo(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/login.php(5) :  ($_POST['uname'])
+
+[D8DBBA80EB2110002F677B84606646DB : critical : Cross-Site Scripting : Reflected : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/login.php(66) :  ->builtin_echo(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/login.php(26) : <=> ($username)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/login.php(26) :  ($_POST['uname'])
+
+[6BBC6EEAD080EB697F84B94C24E5759C : critical : Cross-Site Scripting : Reflected : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/odysseus.php(5) :  ->builtin_echo(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/odysseus.php(4) : <=> ($output)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/odysseus.php(4) : <->shell_exec(0->return)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/odysseus.php(2) : <=> ($cmd)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/odysseus.php(2) :  ($_GET['cmd'])
+
+[EE29BC0F26AFDFB6688C50CF052F709F : critical : Cross-Site Scripting : Reflected : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/regapi.php(25) :  ->builtin_echo(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/regapi.php(7) : <=> ($name)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/regapi.php(5) : <=> ($info)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/regapi.php(5) : <->json_decode(0->return)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/regapi.php(3) : <=> ($json)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/regapi.php(3) : <- file_get_contents(return)
+
+[6BDCD91B420F8D216E89F2A33FEEF3C5 : critical : Cross-Site Scripting : Reflected : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/regapi.php(25) :  ->builtin_echo(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/regapi.php(9) : <=> ($email)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/regapi.php(5) : <=> ($info)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/regapi.php(5) : <->json_decode(0->return)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/regapi.php(3) : <=> ($json)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/regapi.php(3) : <- file_get_contents(return)
+
+[5FA84E3DDE17F09546E55BF58FA22816 : critical : Cross-Site Scripting : Reflected : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/shell.php(15) :  ->builtin_echo(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/shell.php(14) : <=> ($output)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/shell.php(14) : <->shell_exec(0->return)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/shell.php(13) : <=> ($c)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/shell.php(13) :  ($_REQUEST['c'])
+
+[46B16D5B8B4D49C1BAC64C418AEE6545 : critical : Cross-Site Scripting : Reflected : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/ssrf_download.php(5) :  ->builtin_echo(0)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/ssrf_download.php(3) : <=> ($file)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/ssrf_download.php(3) : <->trim(0->return)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/ssrf_download.php(3) :  ($_GET['file'])
+
+[F275E9F509B2D3E6B06FDE16449582B0 : critical : SQL Injection : dataflow ]
+Jenkins/workspace/FortifyFP/displaydata.php(23) :  ->mysqli_query(1)
+    Jenkins/workspace/FortifyFP/displaydata.php(16) : <=> ($aid)
+    Jenkins/workspace/FortifyFP/displaydata.php(16) :  ($_GET['aid'])
+
+[2C93FD7C251A4B8839A8E6DDCD3291AA : critical : SQL Injection : dataflow ]
+Jenkins/workspace/FortifyFP/feedback_user.php(30) :  ->mysqli_query(1)
+    Jenkins/workspace/FortifyFP/feedback_user.php(28) : <=> ($query)
+    Jenkins/workspace/FortifyFP/feedback_user.php(20) : <=> ($feedback)
+    Jenkins/workspace/FortifyFP/feedback_user.php(20) :  ($_POST['fb'])
+
+[D24EA0A90E996FAFCF070C1AD96FFE39 : critical : SQL Injection : dataflow ]
+Jenkins/workspace/FortifyFP/login.php(45) :  ->mysqli_query(1)
+    Jenkins/workspace/FortifyFP/login.php(41) : <=> ($query)
+    Jenkins/workspace/FortifyFP/login.php(27) : <=> ($username)
+    Jenkins/workspace/FortifyFP/login.php(27) :  ($_POST['uname'])
+
+[00849DDF748771B0D6507F0C3C42012C : critical : SQL Injection : dataflow ]
+Jenkins/workspace/FortifyFP/login.php(45) :  ->mysqli_query(1)
+    Jenkins/workspace/FortifyFP/login.php(41) : <=> ($query)
+    Jenkins/workspace/FortifyFP/login.php(28) : <=> ($password)
+    Jenkins/workspace/FortifyFP/login.php(28) :  ($_POST['pwd'])
+
+[68EFBE07A96028C5D78327D7035B775A : critical : SQL Injection : dataflow ]
+Jenkins/workspace/FortifyFP/login.php(45) :  ->mysqli_query(1)
+    Jenkins/workspace/FortifyFP/login.php(41) : <=> ($query)
+    Jenkins/workspace/FortifyFP/login.php(41) :  ($password)
+
+[2DBCEDB6969D17321DC75D228814A64C : critical : SQL Injection : dataflow ]
+Jenkins/workspace/FortifyFP/regapi.php(18) :  ->mysqli_query(1)
+    Jenkins/workspace/FortifyFP/regapi.php(7) : <=> ($name)
+    Jenkins/workspace/FortifyFP/regapi.php(5) : <=> ($info)
+    Jenkins/workspace/FortifyFP/regapi.php(5) : <->json_decode(0->return)
+    Jenkins/workspace/FortifyFP/regapi.php(3) : <=> ($json)
+    Jenkins/workspace/FortifyFP/regapi.php(3) : <- file_get_contents(return)
+
+[3069EBB9D804E6802DF19819807499C7 : critical : SQL Injection : dataflow ]
+Jenkins/workspace/FortifyFP/regapi.php(32) :  ->mysqli_query(1)
+    Jenkins/workspace/FortifyFP/regapi.php(7) : <=> ($name)
+    Jenkins/workspace/FortifyFP/regapi.php(5) : <=> ($info)
+    Jenkins/workspace/FortifyFP/regapi.php(5) : <->json_decode(0->return)
+    Jenkins/workspace/FortifyFP/regapi.php(3) : <=> ($json)
+    Jenkins/workspace/FortifyFP/regapi.php(3) : <- file_get_contents(return)
+
+[E616DBFF1F525F3261AD29B7DEA375B7 : critical : SQL Injection : dataflow ]
+Jenkins/workspace/FortifyFP/regapi.php(32) :  ->mysqli_query(1)
+    Jenkins/workspace/FortifyFP/regapi.php(32) :  ($password)
+
+[4D814343CB80216B90B6FBA6385636D8 : critical : SQL Injection : dataflow ]
+Jenkins/workspace/FortifyFP/register.php(28) :  ->mysqli_query(1)
+    Jenkins/workspace/FortifyFP/register.php(11) : <=> ($password)
+    Jenkins/workspace/FortifyFP/register.php(11) :  ($info->password)
+
+[B465DAD182917F11230BD05F28A4D0F1 : critical : SQL Injection : dataflow ]
+Jenkins/workspace/FortifyFP/register.php(28) :  ->mysqli_query(1)
+    Jenkins/workspace/FortifyFP/register.php(28) :  ($password)
+
+[E6A2351DC0B10B1804DA4A819A65C0E8 : critical : SQL Injection : dataflow ]
+Jenkins/workspace/FortifyFP/transfer.php(58) :  ->mysqli_query(1)
+    Jenkins/workspace/FortifyFP/transfer.php(37) : <=> ($tacno)
+    Jenkins/workspace/FortifyFP/transfer.php(37) :  ($_POST['tacno'])
+
+[25CD433A51293DA7DCD0A442FCAA94BD : critical : SQL Injection : dataflow ]
+Jenkins/workspace/FortifyFP/transfer.php(67) :  ->mysqli_query(1)
+    Jenkins/workspace/FortifyFP/transfer.php(37) : <=> ($tacno)
+    Jenkins/workspace/FortifyFP/transfer.php(37) :  ($_POST['tacno'])
+
+[3DAAD955F4907AFE10CB05CF0B16C7C6 : critical : SQL Injection : dataflow ]
+Jenkins/workspace/FortifyFP/transfer_csrftoekn.php(59) :  ->mysqli_query(1)
+    Jenkins/workspace/FortifyFP/transfer_csrftoekn.php(38) : <=> ($tacno)
+    Jenkins/workspace/FortifyFP/transfer_csrftoekn.php(38) :  ($_POST['tacno'])
+
+[FEBA83E7A168F5CA37CBE370496E23B6 : critical : SQL Injection : dataflow ]
+Jenkins/workspace/FortifyFP/transfer_csrftoekn.php(68) :  ->mysqli_query(1)
+    Jenkins/workspace/FortifyFP/transfer_csrftoekn.php(38) : <=> ($tacno)
+    Jenkins/workspace/FortifyFP/transfer_csrftoekn.php(38) :  ($_POST['tacno'])
+
+[F275E9F509B2D3E6B06FDE16449582B1 : critical : SQL Injection : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/displaydata.php(23) :  ->mysqli_query(1)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/displaydata.php(16) : <=> ($aid)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/displaydata.php(16) :  ($_GET['aid'])
+
+[2C93FD7C251A4B8839A8E6DDCD3291AB : critical : SQL Injection : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/feedback_user.php(30) :  ->mysqli_query(1)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/feedback_user.php(28) : <=> ($query)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/feedback_user.php(20) : <=> ($feedback)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/feedback_user.php(20) :  ($_POST['fb'])
+
+[D24EA0A90E996FAFCF070C1AD96FFE3A : critical : SQL Injection : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/login.php(44) :  ->mysqli_query(1)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/login.php(40) : <=> ($query)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/login.php(26) : <=> ($username)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/login.php(26) :  ($_POST['uname'])
+
+[00849DDF748771B0D6507F0C3C42012D : critical : SQL Injection : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/login.php(44) :  ->mysqli_query(1)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/login.php(40) : <=> ($query)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/login.php(27) : <=> ($password)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/login.php(27) :  ($_POST['pwd'])
+
+[68EFBE07A96028C5D78327D7035B775B : critical : SQL Injection : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/login.php(44) :  ->mysqli_query(1)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/login.php(40) : <=> ($query)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/login.php(40) :  ($password)
+
+[2DBCEDB6969D17321DC75D228814A64D : critical : SQL Injection : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/regapi.php(18) :  ->mysqli_query(1)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/regapi.php(7) : <=> ($name)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/regapi.php(5) : <=> ($info)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/regapi.php(5) : <->json_decode(0->return)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/regapi.php(3) : <=> ($json)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/regapi.php(3) : <- file_get_contents(return)
+
+[3069EBB9D804E6802DF19819807499C8 : critical : SQL Injection : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/regapi.php(32) :  ->mysqli_query(1)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/regapi.php(7) : <=> ($name)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/regapi.php(5) : <=> ($info)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/regapi.php(5) : <->json_decode(0->return)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/regapi.php(3) : <=> ($json)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/regapi.php(3) : <- file_get_contents(return)
+
+[E616DBFF1F525F3261AD29B7DEA375B8 : critical : SQL Injection : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/regapi.php(32) :  ->mysqli_query(1)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/regapi.php(32) :  ($password)
+
+[4D814343CB80216B90B6FBA6385636D9 : critical : SQL Injection : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/register.php(28) :  ->mysqli_query(1)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/register.php(11) : <=> ($password)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/register.php(11) :  ($info->password)
+
+[B465DAD182917F11230BD05F28A4D0F2 : critical : SQL Injection : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/register.php(28) :  ->mysqli_query(1)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/register.php(28) :  ($password)
+
+[E6A2351DC0B10B1804DA4A819A65C0E9 : critical : SQL Injection : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer.php(58) :  ->mysqli_query(1)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer.php(37) : <=> ($tacno)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer.php(37) :  ($_POST['tacno'])
+
+[25CD433A51293DA7DCD0A442FCAA94BE : critical : SQL Injection : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer.php(67) :  ->mysqli_query(1)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer.php(37) : <=> ($tacno)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer.php(37) :  ($_POST['tacno'])
+
+[3DAAD955F4907AFE10CB05CF0B16C7C7 : critical : SQL Injection : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer_csrftoekn.php(59) :  ->mysqli_query(1)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer_csrftoekn.php(38) : <=> ($tacno)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer_csrftoekn.php(38) :  ($_POST['tacno'])
+
+[FEBA83E7A168F5CA37CBE370496E23B7 : critical : SQL Injection : dataflow ]
+Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer_csrftoekn.php(68) :  ->mysqli_query(1)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer_csrftoekn.php(38) : <=> ($tacno)
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer_csrftoekn.php(38) :  ($_POST['tacno'])
+
+[35DD2BDCCB0E5D9CBC20AADD3314B622 : high : Privacy Violation : Autocomplete : content ]
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/login.php(7)
+
+[9DC0EF3E76F25269AD6581B4D64E9B41 : low : Cross-Site Request Forgery : content ]
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/displaydata.php(3)
+
+[8C15C00D9DC58A41864314C0BCA687B9 : low : Cross-Site Request Forgery : content ]
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/displaydata_safe.php(3)
+
+[33DEB573F2608EBAF8CFAA3D0FBD28AD : low : Cross-Site Request Forgery : content ]
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/feedback_user.php(3)
+
+[0C6B8EE7AB6E18D88679CDB6BBE556B2 : low : Cross-Site Request Forgery : content ]
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/fileupload.php(9)
+
+[CE80EF18A100B036BDAAF29D8FBAEFFF : low : Cross-Site Request Forgery : content ]
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/images/shell.php(6)
+
+[EC2BD92118C9CC2868DE3031D582D0E7 : low : Cross-Site Request Forgery : content ]
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/login.php(4)
+
+[CE80EF18A100B036BDAAF29D8FBAF000 : low : Cross-Site Request Forgery : content ]
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/shell.php(6)
+
+[144B5214553336791E6AA87CB377F084 : low : Cross-Site Request Forgery : content ]
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer.php(4)
+
+[4562654743B4BE796D749F08F167CBB9 : low : Hidden Field : content ]
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/transfer_csrftoekn.php(19)
+
+[0D35A98DC713C723643E020069817369 : medium : Often Misused : File Upload : content ]
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/fileupload.php(10)
+
+[868B937C01A273EEA3EC3701CD973616 : low : Cross-Site Request Forgery : structural ]
+    Jenkins/workspace/FortifyFP/register.html(38)
+
+[747F24BC2521657E3F0D863B8313F609 : low : Cross-Site Request Forgery : structural ]
+    Jenkins/workspace/FortifyFP/regjson.html(40)
+
+[FA2350F2C83C44CDE79E05202EB9C5BD : low : Password Management : Password in Comment : structural ]
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/login.php(34)
+
+[EBF25CC84EA0A9BF3C5557B1C98B961D : low : Password Management : Password in Comment : structural ]
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/login.php(42)
+
+[A353A67D56ED9AFD7F45056965AB8478 : low : Password Management : Password in Comment : structural ]
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/regapi.php(13)
+
+[868B937C01A273EEA3EC3701CD973617 : low : Cross-Site Request Forgery : structural ]
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/register.html(38)
+
+[747F24BC2521657E3F0D863B8313F60A : low : Cross-Site Request Forgery : structural ]
+    Users/psmkr/Desktop/CodeReview/phpvulnbank-master/regjson.html(40)
