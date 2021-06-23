@@ -2,6 +2,7 @@
 <h1>Enter username and password</h1>
 
 <form name="loginform" method="POST" action="login.php">
+
 username:<input type="text" name='uname' value=<?php if(isset($_POST["uname"])) echo $_POST["uname"] ; ?>><br><br> 
 <!--		username:<input type="text" name='uname'><br><br>-->
 	password:<input type=password name=pwd>
@@ -28,7 +29,7 @@ $password=$_POST["pwd"];
 session_start();
 //$_SESSION["uname"]=$username;
 
-$con=mysqli_connect("localhost","root","bose123$","bankdb");
+$con=mysqli_connect("localhost","groot","bose123$","bankdb");
 
 //$username=mysqli_real_escape_string ($con,$username);
 //$password=mysqli_real_escape_string ($con,$password);
@@ -52,18 +53,14 @@ if($num>0)
 session_regenerate_id();
 $_SESSION["uname"]=$username;
 
-echo "hello $username";
-//header("location:profile.php");
+header("location:profile.php");
 
-
-
+//change is the law of life
 }
 else
 {
-if(contains($username,"<,>"))
-{
-	$username=htmlspecialchars($username);
-}
+
+//$enusername=htmlspecialchars($username);
 //$output=`$username`;
 
 echo "<br><br>you are not $username";
