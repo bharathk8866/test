@@ -8,7 +8,7 @@ RUN apt-get install mysql-server -y
 RUN apt-get update --fix-missing
  
  COPY /src/ /var/www/html/phpvulnbank
- COPY /dbscript/ /urs/sbin/
+ COPY /dbscript/ /usr/sbin/
  COPY /dock/ /usr/sbin/
 
  RUN chmod +x /usr/sbin/dock.sh
